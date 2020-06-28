@@ -1,0 +1,3 @@
+Flask
+gunicorn
+httpx==0.13.1

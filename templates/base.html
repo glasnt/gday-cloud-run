@@ -1,0 +1,70 @@
+<!--- Taken directly from a deployment of gcr.io/cloudrun/hello -->
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Congratulations | Cloud Run</title>
+<link rel="stylesheet" href="/assets/style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="preload" as="font">
+<link
+  href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsSAAALEgHS3X78AAAB5klEQVRYha2XMVLDMBBFPxl6qCjciBskNzA3AE5AqrTQuaVVR1pX4QSYGyQ3SGqGATcu3JBUlGGUiTPyeiWvZH6TsSTLb/+XN8nZfr+H0lUBYAvgucySbzBSupoCmJRZ8sTNx2p0vG8J4AHAl9LVQunqmtnPQD4qXa0d81GyARo1IC/2hmWWGIfeAYwBGIi7fwMos2QNYEfmTLWXZKw4fl4AeKOQQxwAcaERrbIg14MjCQKwYrA1KJI+gBtmjLqAIZEcXsNGSlfb42a27sssKaw15lz8ePbcGOdcrzPViFz3uuCIwVZQJBIAbiMuBlviSCQASulqEgjQqPctaQE4+gEiYrDljYQ6AIcLU2ZM6gJ8kUgBxp6uGKJOJFIACJuSRK1IOgCecxDzNrh0iuScW/D7+eG4LxGuk6sDcDVbTZhuCEe1sV/JxuFpnacF5wDX/zsAV7OVOZS3EQ8/tOo6Tw+tWgqwqfN0S8Ziqp/Xedr6SScFWDBjIQAny+lEC8CT/5KsC7G/ZbkXwFF9WefpmoxJq+9YHgMQc/qdlscAhNrvtdwJ4Mh/x1Thq77XcieApHoPgNjyUABJ8wmyfBAAU32w5SyAI/+5p/tFW84CkOpfzb9kaqll/yDLfQDsgy2Z6gdb3hKAP2n+6m+fxBVHAAAAAElFTkSuQmCC"
+  rel="icon" 
+  type="image/png" 
+/>
+</head>
+<style>{{flipcss}}</style>
+
+<body>
+  <div id="flipdiv">
+	<div class="container">
+		<div class="hero">
+			<div style="text-align:center;">
+				<picture>
+					<source srcset="/assets/celebration-dark.svg" alt="A group celebrating" media="(prefers-color-scheme: dark)">
+					<img src="/assets/celebration.svg" alt="A group celebrating" width="427" height="231">
+				</picture>
+			</div>
+
+			<div class="message">
+				<h1>It's running!</h1>
+				<h2>Congratulations, you successfully deployed a container image to Cloud Run</h2>
+			</div>
+		</div>
+
+		<div class="details">
+			<p>
+      This created the revision <code>{{data.revision}}</code> of the Cloud Run service <code>{{data.service}}</code>
+      in the <code>{{data.region}}</code> region.
+            </p>
+
+			<p class="callout">
+				You can deploy any container to Cloud Run that listens for HTTP requests on the port defined by the
+				<code>PORT</code> environment variable.
+				Cloud Run will scale automatically based on requests and you never have to worry about
+				infrastructure.
+			</p>
+
+			<h3>What's next?</h3>
+			<p class="next">Follow the Quickstart tutorial to build a “Hello World” application in your favorite
+				language into
+				a container image, and then deploy it to Cloud Run.</p>
+			<p class="cta">
+				<a href="https://cloud.google.com/run/docs/quickstarts/build-and-deploy" target="_blank" rel="noopener">
+					BUILD AND DEPLOY QUICKSTART</a>
+        {{flipbutton|safe}}
+      </p>
+		</div>
+	</div>
+  </div>
+
+  <!-- https://www.webmaster-source.com/2012/04/03/how-to-flip-a-page-upside-down-with-css/ -->
+  <script type="text/javascript">
+    window.onload = scrollDownToTheTop;
+    function scrollDownToTheTop() {
+    window.scrollTo(0, document.body.scrollHeight);
+    }
+  </script>
+</body>
+</html>
+
